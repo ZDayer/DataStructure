@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 // 默认从 1 开始
 
 #define OK 1
@@ -31,10 +32,10 @@ typedef Node *LinkList;
 
 
 
-//
+void CreateListHead(LinkList *L, int n); // 随机产生 n个随机数, 建立带头结点的单线性表(头插法)
 //Status InitList(SqList *L);
 //Status ListEmpty(SqList L);
-//Status ClearList(SqList *L);
+Status ClearList(LinkList *L);
 Status GetElem(LinkList L, int i, ElemType *e);
 //Status LocateElem(SqList L, ElemType e);
 Status ListInsert(LinkList *L, int i, ElemType e);
