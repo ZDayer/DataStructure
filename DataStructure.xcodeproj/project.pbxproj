@@ -10,6 +10,8 @@
 		0CAFC94624AB7DA500D7C5C0 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFC94524AB7DA500D7C5C0 /* main.c */; };
 		0CAFC95224AB7EB100D7C5C0 /* LinkList.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFC94D24AB7EB100D7C5C0 /* LinkList.c */; };
 		0CAFC95324AB7EB100D7C5C0 /* List.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFC95024AB7EB100D7C5C0 /* List.c */; };
+		0CAFC95724ACD56E00D7C5C0 /* StaticLinkList.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFC95624ACD56E00D7C5C0 /* StaticLinkList.c */; };
+		0CAFC95A24ACD60B00D7C5C0 /* define.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFC95924ACD60B00D7C5C0 /* define.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +33,10 @@
 		0CAFC94E24AB7EB100D7C5C0 /* LinkList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkList.h; sourceTree = "<group>"; };
 		0CAFC95024AB7EB100D7C5C0 /* List.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = List.c; sourceTree = "<group>"; };
 		0CAFC95124AB7EB100D7C5C0 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		0CAFC95524ACD56E00D7C5C0 /* StaticLinkList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticLinkList.h; sourceTree = "<group>"; };
+		0CAFC95624ACD56E00D7C5C0 /* StaticLinkList.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = StaticLinkList.c; sourceTree = "<group>"; };
+		0CAFC95824ACD60B00D7C5C0 /* define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
+		0CAFC95924ACD60B00D7C5C0 /* define.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = define.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				0CAFC94424AB7DA500D7C5C0 /* DataStructure */,
+				0CAFC95424ACD55A00D7C5C0 /* 静态链表 */,
 				0CAFC94324AB7DA500D7C5C0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				0CAFC94524AB7DA500D7C5C0 /* main.c */,
+				0CAFC95824ACD60B00D7C5C0 /* define.h */,
+				0CAFC95924ACD60B00D7C5C0 /* define.c */,
 				0CAFC94C24AB7EB100D7C5C0 /* 单链表 */,
 				0CAFC94F24AB7EB100D7C5C0 /* 线性表 */,
 			);
@@ -86,6 +95,15 @@
 				0CAFC95024AB7EB100D7C5C0 /* List.c */,
 			);
 			path = "线性表";
+			sourceTree = "<group>";
+		};
+		0CAFC95424ACD55A00D7C5C0 /* 静态链表 */ = {
+			isa = PBXGroup;
+			children = (
+				0CAFC95524ACD56E00D7C5C0 /* StaticLinkList.h */,
+				0CAFC95624ACD56E00D7C5C0 /* StaticLinkList.c */,
+			);
+			path = "静态链表";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +166,8 @@
 				0CAFC94624AB7DA500D7C5C0 /* main.c in Sources */,
 				0CAFC95324AB7EB100D7C5C0 /* List.c in Sources */,
 				0CAFC95224AB7EB100D7C5C0 /* LinkList.c in Sources */,
+				0CAFC95A24ACD60B00D7C5C0 /* define.c in Sources */,
+				0CAFC95724ACD56E00D7C5C0 /* StaticLinkList.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

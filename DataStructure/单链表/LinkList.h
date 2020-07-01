@@ -12,15 +12,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "define.h"
 // 默认从 1 开始
 
-#define OK 1
-#define ERROR 0
-#define TRUE 1
-#define FALSE 0
-
-typedef int Status;
-typedef int ElemType;
 
 typedef struct Node {
     ElemType data;
