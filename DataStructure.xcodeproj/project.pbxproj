@@ -54,7 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				0CAFC94424AB7DA500D7C5C0 /* DataStructure */,
-				0CAFC95424ACD55A00D7C5C0 /* 静态链表 */,
 				0CAFC94324AB7DA500D7C5C0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,6 +74,7 @@
 				0CAFC95924ACD60B00D7C5C0 /* define.c */,
 				0CAFC94C24AB7EB100D7C5C0 /* 单链表 */,
 				0CAFC94F24AB7EB100D7C5C0 /* 线性表 */,
+				0CAFC95424ACD55A00D7C5C0 /* 静态链表 */,
 			);
 			path = DataStructure;
 			sourceTree = "<group>";
