@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0CAFC94624AB7DA500D7C5C0 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFC94524AB7DA500D7C5C0 /* main.c */; };
-		0CAFC95224AB7EB100D7C5C0 /* LinkList.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFC94D24AB7EB100D7C5C0 /* LinkList.c */; };
-		0CAFC95324AB7EB100D7C5C0 /* List.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFC95024AB7EB100D7C5C0 /* List.c */; };
-		0CAFC95724ACD56E00D7C5C0 /* StaticLinkList.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFC95624ACD56E00D7C5C0 /* StaticLinkList.c */; };
 		0CAFC95A24ACD60B00D7C5C0 /* define.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFC95924ACD60B00D7C5C0 /* define.c */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +34,12 @@
 		0CAFC95624ACD56E00D7C5C0 /* StaticLinkList.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = StaticLinkList.c; sourceTree = "<group>"; };
 		0CAFC95824ACD60B00D7C5C0 /* define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
 		0CAFC95924ACD60B00D7C5C0 /* define.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = define.c; sourceTree = "<group>"; };
+		0CAFC95D24AE22A900D7C5C0 /* Stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		0CAFC95E24AE22A900D7C5C0 /* Stack.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Stack.c; sourceTree = "<group>"; };
+		0CAFC96024AE2AC000D7C5C0 /* DoubleStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoubleStack.h; sourceTree = "<group>"; };
+		0CAFC96124AE2AC000D7C5C0 /* DoubleStack.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = DoubleStack.c; sourceTree = "<group>"; };
+		0CAFC96324AE2DC700D7C5C0 /* LinkStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkStack.h; sourceTree = "<group>"; };
+		0CAFC96424AE2DC700D7C5C0 /* LinkStack.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LinkStack.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,7 @@
 		0CAFC94424AB7DA500D7C5C0 /* DataStructure */ = {
 			isa = PBXGroup;
 			children = (
+				0CAFC95C24AE229D00D7C5C0 /* 栈 */,
 				0CAFC94524AB7DA500D7C5C0 /* main.c */,
 				0CAFC95824ACD60B00D7C5C0 /* define.h */,
 				0CAFC95924ACD60B00D7C5C0 /* define.c */,
@@ -104,6 +108,19 @@
 				0CAFC95624ACD56E00D7C5C0 /* StaticLinkList.c */,
 			);
 			path = "静态链表";
+			sourceTree = "<group>";
+		};
+		0CAFC95C24AE229D00D7C5C0 /* 栈 */ = {
+			isa = PBXGroup;
+			children = (
+				0CAFC95D24AE22A900D7C5C0 /* Stack.h */,
+				0CAFC95E24AE22A900D7C5C0 /* Stack.c */,
+				0CAFC96024AE2AC000D7C5C0 /* DoubleStack.h */,
+				0CAFC96124AE2AC000D7C5C0 /* DoubleStack.c */,
+				0CAFC96324AE2DC700D7C5C0 /* LinkStack.h */,
+				0CAFC96424AE2DC700D7C5C0 /* LinkStack.c */,
+			);
+			path = "栈";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,10 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CAFC94624AB7DA500D7C5C0 /* main.c in Sources */,
-				0CAFC95324AB7EB100D7C5C0 /* List.c in Sources */,
-				0CAFC95224AB7EB100D7C5C0 /* LinkList.c in Sources */,
 				0CAFC95A24ACD60B00D7C5C0 /* define.c in Sources */,
-				0CAFC95724ACD56E00D7C5C0 /* StaticLinkList.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
