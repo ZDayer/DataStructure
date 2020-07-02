@@ -41,3 +41,11 @@ Status ListDelete(LinkList *L, int i, ElemType *e);
 
 
 #endif /* LinkList_h */
+
+/* 循环链表
+ 将单链表中终端结点的指针端由空指针改为指向头结点, 就使整个单链表形成一个环, 这种头尾相接的单链表称为单循环链表 circular linked list
+ 为了方便处理, 使空链表和非空链表处理一致, 通常会设置一个头结点, 头指针指向头结点, 头结点的指针指向自己
+ 
+ 用尾结点更加方便
+ 
+ */
