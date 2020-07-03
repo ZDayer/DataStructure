@@ -9,17 +9,17 @@
 #include "List.h"
 
 // 将 Lb 中不在 La 的元素放入 La
-void unionL(SqList *La, SqList Lb) {
-    int La_len = ListLength(*La);
-    int Lb_len = ListLength(Lb);
-    ElemType e;
-    for (int i = 1; i < Lb_len; i++) {
-        GetElem(Lb, i, &e);
-        if (!LocateElem(*La, e)) {
-            ListInsert(La, La_len++, e);
-        }
-    }
-}
+//void unionL(SqList *La, SqList Lb) {
+//    int La_len = ListLength(*La);
+//    int Lb_len = ListLength(Lb);
+//    ElemType e;
+//    for (int i = 1; i < Lb_len; i++) {
+//        GetElem(Lb, i, &e);
+//        if (!LocateElem(*La, e)) {
+//            ListInsert(La, La_len++, e);
+//        }
+//    }
+//}
 
 
 Status GetElem(SqList L, int i, ElemType *e) {

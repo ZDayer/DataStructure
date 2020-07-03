@@ -33,7 +33,7 @@ void Free_SSL(StaticLinkList space, int i);
 
 
 Status ListInsert(StaticLinkList L, int i, ElemType e);
-
+Status ListDelete(StaticLinkList L, int i);
 int ListLength(StaticLinkList L);
 
 #endif /* StaticLinkList_h */
