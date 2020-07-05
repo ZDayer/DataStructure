@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C17D6CA24B1D038005844BA /* Queue.c in Sources */ = {isa = PBXBuildFile; fileRef = 0C17D6C924B1D038005844BA /* Queue.c */; };
+		0C17D6CD24B1F684005844BA /* LinkQueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 0C17D6CC24B1F684005844BA /* LinkQueue.c */; };
 		0CAFC94624AB7DA500D7C5C0 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFC94524AB7DA500D7C5C0 /* main.c */; };
 		0CAFC95A24ACD60B00D7C5C0 /* define.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFC95924ACD60B00D7C5C0 /* define.c */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C17D6C824B1D038005844BA /* Queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
+		0C17D6C924B1D038005844BA /* Queue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Queue.c; sourceTree = "<group>"; };
+		0C17D6CB24B1F684005844BA /* LinkQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkQueue.h; sourceTree = "<group>"; };
+		0C17D6CC24B1F684005844BA /* LinkQueue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LinkQueue.c; sourceTree = "<group>"; };
 		0CAFC94224AB7DA500D7C5C0 /* DataStructure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DataStructure; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CAFC94524AB7DA500D7C5C0 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		0CAFC94D24AB7EB100D7C5C0 /* LinkList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LinkList.c; sourceTree = "<group>"; };
@@ -53,6 +59,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C17D6C724B1D02D005844BA /* 队列 */ = {
+			isa = PBXGroup;
+			children = (
+				0C17D6C824B1D038005844BA /* Queue.h */,
+				0C17D6C924B1D038005844BA /* Queue.c */,
+				0C17D6CB24B1F684005844BA /* LinkQueue.h */,
+				0C17D6CC24B1F684005844BA /* LinkQueue.c */,
+			);
+			path = "队列";
+			sourceTree = "<group>";
+		};
 		0CAFC93924AB7DA500D7C5C0 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +89,7 @@
 		0CAFC94424AB7DA500D7C5C0 /* DataStructure */ = {
 			isa = PBXGroup;
 			children = (
+				0C17D6C724B1D02D005844BA /* 队列 */,
 				0CAFC95C24AE229D00D7C5C0 /* 栈 */,
 				0CAFC94524AB7DA500D7C5C0 /* main.c */,
 				0CAFC95824ACD60B00D7C5C0 /* define.h */,
@@ -180,8 +198,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C17D6CA24B1D038005844BA /* Queue.c in Sources */,
 				0CAFC94624AB7DA500D7C5C0 /* main.c in Sources */,
 				0CAFC95A24ACD60B00D7C5C0 /* define.c in Sources */,
+				0C17D6CD24B1F684005844BA /* LinkQueue.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
