@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C17D6CA24B1D038005844BA /* Queue.c in Sources */ = {isa = PBXBuildFile; fileRef = 0C17D6C924B1D038005844BA /* Queue.c */; };
-		0C17D6CD24B1F684005844BA /* LinkQueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 0C17D6CC24B1F684005844BA /* LinkQueue.c */; };
 		0CAFC94624AB7DA500D7C5C0 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFC94524AB7DA500D7C5C0 /* main.c */; };
 		0CAFC95A24ACD60B00D7C5C0 /* define.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFC95924ACD60B00D7C5C0 /* define.c */; };
-		0CEEE49324B201B800F590C4 /* String.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CEEE49224B201B800F590C4 /* String.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -211,11 +208,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CEEE49324B201B800F590C4 /* String.c in Sources */,
-				0C17D6CA24B1D038005844BA /* Queue.c in Sources */,
 				0CAFC94624AB7DA500D7C5C0 /* main.c in Sources */,
 				0CAFC95A24ACD60B00D7C5C0 /* define.c in Sources */,
-				0C17D6CD24B1F684005844BA /* LinkQueue.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

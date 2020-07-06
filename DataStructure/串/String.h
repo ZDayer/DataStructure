@@ -22,11 +22,27 @@
  StrLength(S)
  StrCompare(S,T) 对比大小
  Concat(T, S1, S2) 用 T 返回由 S1和 S2 联接而成的新串
- SubStrin(Sub,S,pos,len)  position
+ SubStrin(Sub,S,pos,len)  position 从 1 开始的
  Index(S,T,pos) 串 S和 T 存在, T 是非空串, 1<= pos <= StrLength(S), 若主串 S 中存在和串 T 值相同的子串, 则返回它在主串 S 中第 pos 个字符之后第一次出现的位置, 否则返回 0
  Replace(S,T,V) 串 S, T 和 V 存在, T 是非空串, 用 V 替换主串 S 中出现的所有与 T 相等的不重复子串
  StrInsert(S,pos,T)
  StrDelete(S,pos,len) 
  */
 
+#define MAXSIZE 100
+typedef char SElemType;
+typedef struct {
+    SElemType data[MAXSIZE];
+}String;
+
+
+// 朴素的模式匹配算法, pos 从 1 开始, 1 <= pos <= StrLenght(S)
+int Index(String S, String T, int pos);
+
+
+// KMP 模式
+// 获取 next 数组
+void get_next(String T, int *next);
+
+int Index_KMP(String S, String T, int pos);
 #endif /* String_h */
