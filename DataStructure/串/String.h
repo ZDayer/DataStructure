@@ -55,5 +55,4 @@ int Indexs(String S, String T, int pos);
 void get_next(String T, int *next);
 
 int Index_KMP(String S, String T, int pos);
->>>>>>> 45aedb8cab9aa7587bd256e2ac6ffe2a18ff96b5
 #endif /* String_h */

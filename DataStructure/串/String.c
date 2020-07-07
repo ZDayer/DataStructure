@@ -33,7 +33,7 @@ int Index(String S, String T, int pos) {
 
 int Indexs(String S, String T, int pos) {
     int i = pos; // i 用于主串 S 中当前位置下标, 若 pos 不为 1, 则从 pos 位置开始匹配
-    int j = i; // j 用于子串 T 中当前位置下标值
+    int j = 1; // j 用于子串 T 中当前位置下标值
     while (i <= S.data[0] && j <= T.data[0]) { //首位存储串长度
         if (S.data[i] == T.data[j]) {
             ++i; ++j;
@@ -68,7 +68,7 @@ void get_next(String T, int *next) {
 
 int Index_KMP(String S, String T, int pos) {
     int i = pos; // i 用于主串 S 中当前位置下标, 若 pos 不为 1, 则从 pos 位置开始匹配
-    int j = i; // j 用于子串 T 中当前位置下标值
+    int j = 1; // j 用于子串 T 中当前位置下标值
     int next[255];
     get_next(T, next);
 //    get_nextval(T, next);
