@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0CAFC94624AB7DA500D7C5C0 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFC94524AB7DA500D7C5C0 /* main.c */; };
 		0CAFC95A24ACD60B00D7C5C0 /* define.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFC95924ACD60B00D7C5C0 /* define.c */; };
+		0CEEE49824B4C0B500F590C4 /* Tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CEEE49624B4C08300F590C4 /* Tree.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +47,8 @@
 		0CAFC96424AE2DC700D7C5C0 /* LinkStack.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LinkStack.c; sourceTree = "<group>"; };
 		0CEEE49124B201B800F590C4 /* String.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = String.h; sourceTree = "<group>"; };
 		0CEEE49224B201B800F590C4 /* String.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = String.c; sourceTree = "<group>"; };
+		0CEEE49524B4C08300F590C4 /* Tree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
+		0CEEE49624B4C08300F590C4 /* Tree.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Tree.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,7 @@
 		0CAFC94424AB7DA500D7C5C0 /* DataStructure */ = {
 			isa = PBXGroup;
 			children = (
+				0CEEE49424B4C07500F590C4 /* 树 */,
 				0CEEE49024B201AD00F590C4 /* 串 */,
 				0C17D6C724B1D02D005844BA /* 队列 */,
 				0CAFC95C24AE229D00D7C5C0 /* 栈 */,
@@ -151,6 +155,15 @@
 			path = "串";
 			sourceTree = "<group>";
 		};
+		0CEEE49424B4C07500F590C4 /* 树 */ = {
+			isa = PBXGroup;
+			children = (
+				0CEEE49524B4C08300F590C4 /* Tree.h */,
+				0CEEE49624B4C08300F590C4 /* Tree.c */,
+			);
+			path = "树";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -209,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CAFC94624AB7DA500D7C5C0 /* main.c in Sources */,
+				0CEEE49824B4C0B500F590C4 /* Tree.c in Sources */,
 				0CAFC95A24ACD60B00D7C5C0 /* define.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
