@@ -79,4 +79,24 @@ typedef struct PCSNode{
     TElemType data;
     struct PCSNode *parent, *firstchild, *rightsib;
 }PCSNode, *PCSTree;
+
+
+
+// 二叉树 链表表示, 优化: 可以添加一个指向双亲的指针
+typedef struct BiTNode {
+    TElemType data;
+    struct BiTNode *lchild, *rchild;
+}BiTNode, *BiTree;
+
+
+// 二叉树遍历
+
+// 前序遍历算法  根 -> 左 -> 右
+void PreOrderTraverse(BiTree T);
+
+// 中序遍历算法 左 -> 根 -> 右
+void InOrderTraverse(BiTree T);
+
+// 后序遍历算法 左 -> 右 -> 根
+void PostOrderTraverse(BiTree T);
 #endif /* Tree_h */
