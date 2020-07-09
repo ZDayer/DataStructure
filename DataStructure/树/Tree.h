@@ -11,6 +11,23 @@
 
 #include <stdio.h>
 
+/*
+ InitTree(*T)  构造空树
+ DestroyTree(*T) 销毁树
+ CreateTree(*T, definition) 按照definition中给出树的定义构造树
+ ClearTree(*T) 若c树存在, 清空为空树, 结点为 0
+ TreeEmpty(T) 空树true, 否则false
+ TreeDepth(T) 返回T的深度
+ Root(T) 返回根结点
+ Value(T,cur_e) cur_e是树的一个结点, 返回此结点的值
+ Assign(T,cur_e,value) 给树T的结点cur_e赋值为value
+ Parent(T,cur_e) 若cur_e是树T的非根结点, 返回它的双亲
+ LeftChild(T, cur_e) 若cur_e是树T的非叶子结点, 返回它的左孩子
+ RightChild(T,cur_e) 若cur_e是树T的非叶子结点, 返回它的右孩子
+ InsertChild(*T, *p, i, c) 其中p指树T的某个结点, i为所指结点p的度加1, 非空树c与T不相交, 操作结果为插入c为树T中p结点的第ik棵子树
+ DeleteChile(*T, *p, i)  其中p指树T的某个结点, i为所指结点p的度, 操作结果为删除T中pz结点的第i棵子树
+ */
+
 
 // 双亲表示法
 #define MAX_TREE_SIZE 100
