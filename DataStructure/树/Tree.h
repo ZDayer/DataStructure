@@ -10,7 +10,8 @@
 #define Tree_h
 
 #include <stdio.h>
-
+#include <stdlib.h>
+#include "define.h"
 /*
  InitTree(*T)  构造空树
  DestroyTree(*T) 销毁树
@@ -116,4 +117,29 @@ void InOrderTraverse(BiTree T);
 
 // 后序遍历算法 左 -> 右 -> 根
 void PostOrderTraverse(BiTree T);
+
+
+// 二叉树生成
+// 前序生成, # 表示空结点
+void CreateBiTree(BiTree *T);
+
+
+
+
+// 线索二叉树
+typedef enum {Link, Thread} PointerTag;  // Link == 0, 左右孩子, Thread == 1, 前驱后继
+typedef struct BiThrNode {
+    TElemType data;
+    struct BiThrNode *lchild, *rchild;
+    PointerTag LTag;
+    PointerTag RTag;
+}BiThrNode, *BIThrTree;
+
+// 中序遍历线索化
+void InThreading(BIThrTree p);
+
+
+// 增加头结点的线索二叉树
+// T指向头结点, 头结点的 lchild 指向根结点, rchild 指向中序遍历的最后一个结点,
+Status InOrderTraverse_Thr(BIThrTree T);
 #endif /* Tree_h */

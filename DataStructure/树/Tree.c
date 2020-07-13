@@ -36,3 +36,56 @@ void PostOrderTraverse(BiTree T) {
     PostOrderTraverse(T->rchild);
     printf("%c", T->data);
 }
+
+
+void CreateBiTree(BiTree *T) {
+    TElemType ch;
+    scanf("%d", &ch);
+    if (ch == "#") { // TElemType 类型为 intg
+        *T = NULL;
+    } else {
+        *T = (BiTree)malloc(sizeof(BiTNode));
+        if (!*T) {
+            exit(OVERFLOW)
+        }
+        (*T)->data = ch;
+        CreateBiTree(&(*T)->lchild);
+        CreateBiTree(&(*T)->rchild);
+    }
+}
+
+
+BIThrTree pre;// 全局变量, 始终指向刚刚访问过的结点 ??
+void InThreading(BIThrTree p) { // 只是改变值, 没有结点的改变,
+    if (!p) {
+        return;
+    }
+    // 中序遍历, 左->根->右
+    InThreading(p->lchild);
+    if (!p->lchild) {
+        p->LTag = Thread;
+        p->lchild = pre; // 指向前驱, pre 上次访问过的结点
+    }
+    if (!pre->rchild) {
+        pre->RTag = Thread;
+        pre->rchild = p;
+    }
+    pre = p;
+    InThreading(p->rchild);
+}
+
+Status InOrderTraverse_Thr(BIThrTree T) {
+    BIThrTree p = T->lchild; // p 指向根结点
+    while (p != T) { // p == T 时表示空树或遍历结束
+        while (p->LTag == Link) {
+            p = p->lchild;
+            printf("%c", p->data);
+            while (p->RTag == Thread && p->rchild != T) {
+                p = p->rchild;
+                printf("%c", p->data);
+            }
+            p = p->rchild;
+        }
+    }
+    return OK;
+}
