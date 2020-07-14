@@ -77,15 +77,16 @@ void InThreading(BIThrTree p) { // 只是改变值, 没有结点的改变,
 Status InOrderTraverse_Thr(BIThrTree T) {
     BIThrTree p = T->lchild; // p 指向根结点
     while (p != T) { // p == T 时表示空树或遍历结束
-        while (p->LTag == Link) {
+        while (p->LTag == Link) { // 中序遍历, 找到第一个结点
             p = p->lchild;
-            printf("%c", p->data);
-            while (p->RTag == Thread && p->rchild != T) {
-                p = p->rchild;
-                printf("%c", p->data);
-            }
-            p = p->rchild;
         }
+        printf("%c", p->data); // 第一个结点的值
+
+        while (p->RTag == Thread && p->rchild != T) {// 有右孩子不会进入, 指向后续结点
+            p = p->rchild;
+            printf("%c", p->data);
+        }
+        p = p->rchild;
     }
     return OK;
 }
