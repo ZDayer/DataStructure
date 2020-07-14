@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C264E0624BDC12E0031F051 /* Graph.c in Sources */ = {isa = PBXBuildFile; fileRef = 0C264E0524BDC12E0031F051 /* Graph.c */; };
 		0CAFC94624AB7DA500D7C5C0 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFC94524AB7DA500D7C5C0 /* main.c */; };
 		0CAFC95A24ACD60B00D7C5C0 /* define.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFC95924ACD60B00D7C5C0 /* define.c */; };
 		0CEEE49824B4C0B500F590C4 /* Tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CEEE49624B4C08300F590C4 /* Tree.c */; };
@@ -29,6 +30,8 @@
 		0C17D6C924B1D038005844BA /* Queue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Queue.c; sourceTree = "<group>"; };
 		0C17D6CB24B1F684005844BA /* LinkQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkQueue.h; sourceTree = "<group>"; };
 		0C17D6CC24B1F684005844BA /* LinkQueue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LinkQueue.c; sourceTree = "<group>"; };
+		0C264E0424BDC12E0031F051 /* Graph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
+		0C264E0524BDC12E0031F051 /* Graph.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Graph.c; sourceTree = "<group>"; };
 		0CAFC94224AB7DA500D7C5C0 /* DataStructure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DataStructure; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CAFC94524AB7DA500D7C5C0 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		0CAFC94D24AB7EB100D7C5C0 /* LinkList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LinkList.c; sourceTree = "<group>"; };
@@ -73,6 +76,15 @@
 			path = "队列";
 			sourceTree = "<group>";
 		};
+		0C264E0324BDC1170031F051 /* 图 */ = {
+			isa = PBXGroup;
+			children = (
+				0C264E0424BDC12E0031F051 /* Graph.h */,
+				0C264E0524BDC12E0031F051 /* Graph.c */,
+			);
+			path = "图";
+			sourceTree = "<group>";
+		};
 		0CAFC93924AB7DA500D7C5C0 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +104,7 @@
 		0CAFC94424AB7DA500D7C5C0 /* DataStructure */ = {
 			isa = PBXGroup;
 			children = (
+				0C264E0324BDC1170031F051 /* 图 */,
 				0CEEE49424B4C07500F590C4 /* 树 */,
 				0CEEE49024B201AD00F590C4 /* 串 */,
 				0C17D6C724B1D02D005844BA /* 队列 */,
@@ -223,6 +236,7 @@
 			files = (
 				0CAFC94624AB7DA500D7C5C0 /* main.c in Sources */,
 				0CEEE49824B4C0B500F590C4 /* Tree.c in Sources */,
+				0C264E0624BDC12E0031F051 /* Graph.c in Sources */,
 				0CAFC95A24ACD60B00D7C5C0 /* define.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
