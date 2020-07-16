@@ -10,6 +10,7 @@
 #define Graph_h
 
 #include <stdio.h>
+#include <stdlib.h>
 
 // 邻接矩阵
 typedef char VertexType;    // 顶点类型, 自定义
@@ -28,4 +29,24 @@ typedef struct {
 
 // 无向网图
 void CreateGraph(MGraph *G);
+
+
+// 邻接表
+typedef struct EdgeNode {
+    int adjvex; // 邻接点域, 存储该顶点对应的下标
+    EdgeType weight; // 权值, 非网图不需要
+    struct EdgeNode *next; //
+}EdgeNode;
+
+typedef struct VertexNode {
+    VertexType data; // 顶点域
+    EdgeNode *firstedge; // 边表头指针
+}VertexNode, AdjList[MAXVEX];
+
+typedef struct {
+    AdjList adjList;
+    int numVertexes, numEdges; // 图中当前顶点数, 边数
+}GraphAdjList;
+
+void CreateALGraph(GraphAdjList *G);
 #endif /* Graph_h */
