@@ -31,6 +31,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+//#include "define.h"
+#include "Queue.h"
 
 // 邻接矩阵
 typedef char VertexType;    // 顶点类型, 自定义
@@ -41,7 +43,7 @@ typedef int EdgeType;       // 权值类型, 自定义
 typedef struct {
     VertexType vexs[MAXVEX]; // 顶点表
     EdgeType arc[MAXVEX][MAXVEX]; // 邻接矩阵, 也可以看做边表
-    int numVertexes, numEdges; // 顶点数, 边树数
+    int numVertexes, numEdges; // 顶点数, 边数
 }MGraph;
 
 
@@ -69,4 +71,20 @@ typedef struct {
 }GraphAdjList;
 
 void CreateALGraph(GraphAdjList *G);
+
+// 邻接矩阵, 深度优先
+void DFS(MGraph G, int i);
+void DFSTraverse(MGraph G);
+
+// 邻接链表, 深度优先
+void DFSLink(GraphAdjList GL, int i);
+void DFSLinkTraverse(GraphAdjList GL);
+
+
+// 广度优先遍历, 与树的层序遍历类似, 利用队列操作, 出队列时将与顶点连接的顶点拉入队列中
+// 邻接矩阵
+void BFSTraverse(MGraph G);
+
+// 邻接表
+void BFSTraverses(GraphAdjList GL);
 #endif /* Graph_h */
