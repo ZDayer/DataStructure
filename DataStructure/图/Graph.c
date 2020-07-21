@@ -161,3 +161,40 @@ void BFSTraverses(GraphAdjList GL) {
     }
 }
 
+
+
+void MiniSpanTree_Prim(MGraph G) {
+    int adjvex[MAXVEX]; // 保存相关顶点下标
+    int lowcost[MAXVEX]; // 保存相关顶点间权值
+    lowcost[0] = 0; // 初始化第一个权值, 即v0加入生成树
+    adjvex[0] = 0; // 初始化第一个顶点
+    for (int i = 1; i < G.numVertexes; i++){ // 除下标为 0 的全部顶点
+        lowcost[i] = G.arc[0][i]; // 将 v0顶点与之有边的权值存入数组
+        adjvex[i] = 0; // 初始化都为 vo 的下标
+    }
+    
+    for (int i = 1; i < G.numVertexes; i++) {
+        int min = INFINITY; // 初始化最小权值为比较大的值
+        int j = 1, k = 0;
+        
+        // 第一次 获得与 v0 相连的边的最小权值,并记录
+        while (j < G.numVertexes) { // 循环全部顶点
+            if (lowcost[j] != 0 && lowcost[j] < min) {
+                min = lowcost[j]; // 让当前权值为最小值
+                k = j;            // 最小值下标存入 k
+            }
+            j++;
+        }
+        
+        
+        printf("(%d,%d)", adjvex[k], k); // 打印当前顶点边中权值最小边 // 第一次打印, adjvex[k] == 0, 表明是从 v0 开始遍历, 找到 v0连接的边, k 记录最小权值的下标, 与 v0相连
+        lowcost[k] = 0; // 将当前顶点权值设为 0, 表示此顶点已经完成任务
+        for (int j = 1; j < G.numVertexes; j++) {
+            if (lowcost[j] != 0 && G.arc[k][j] < lowcost[j]) {
+                // 若下标为k的顶点各边权值小于此前这些顶点未被加入生成树权值
+                lowcost[j] = G.arc[k][j]; // 将较小权值存入 lowcost
+                adjvex[j] = k; // 将下标为k的顶点存入 adjvex
+            }
+        }
+    }
+}

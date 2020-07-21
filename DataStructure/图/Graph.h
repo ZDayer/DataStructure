@@ -87,4 +87,16 @@ void BFSTraverse(MGraph G);
 
 // 邻接表
 void BFSTraverses(GraphAdjList GL);
+
+
+
+
+// 最小生成树
+
+// 普里姆(Prim)算法
+void MiniSpanTree_Prim(MGraph G);
+
+
+
+
 #endif /* Graph_h */
