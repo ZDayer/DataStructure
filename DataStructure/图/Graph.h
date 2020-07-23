@@ -93,9 +93,21 @@ void BFSTraverses(GraphAdjList GL);
 
 // 最小生成树
 
-// 普里姆(Prim)算法
+// 普里姆(Prim)算法, 以顶点为起点
 void MiniSpanTree_Prim(MGraph G);
 
+
+
+// 克鲁斯卡尔(Kruskal)算法, 直接找权值最小边
+// 边集数组
+typedef struct {
+    int begin;
+    int end;
+    int weight;
+}Edge;
+
+
+void MiniSpanTree_Kruskal(MGraph G);
 
 
 

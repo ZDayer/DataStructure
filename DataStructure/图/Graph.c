@@ -198,3 +198,32 @@ void MiniSpanTree_Prim(MGraph G) {
         }
     }
 }
+
+int Find(int *parent, int f) {  // 查找连线顶点的尾部下标
+    while (parent[f] > 0) {
+        f = parent[f];
+    }
+    return f;
+}
+
+
+// 9个顶点, 15 条边
+void MiniSpanTree_Kruskal(MGraph G) {
+    Edge edges[15]; // 边集数组
+    int parent[9]; // 记录顶点, 判断是否形成了回路
+    // 省略了将邻接矩阵转化为边集数组 edges并按权值由小到大排列  // Page252
+    for (int i = 0; i < G.numVertexes; i++) {
+        parent[i] = 0; // 初始化数组
+    }
+    for (int i = 0; i < G.numEdges; i++) { // 循环每一条边
+        int n = Find(parent, edges[i].begin);
+        int m = Find(parent, edges[i].end);
+        if (n != m) { // 不相等, 表示此边没有与现有生成树形成回路
+            parent[n] = m; // 将此边的结尾顶点放入下标为起点的 parent 中, 表示此顶点已经在生成树集合中
+            printf("(%d, %d) %d", edges[i].begin, edges[i].end, edges[i].weight);
+        }
+    }
+}
+
+
+

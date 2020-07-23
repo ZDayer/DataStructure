@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C264E0624BDC12E0031F051 /* Graph.c in Sources */ = {isa = PBXBuildFile; fileRef = 0C264E0524BDC12E0031F051 /* Graph.c */; };
+		0CA27D9924C9D6A30016D2B6 /* Graph.c in Sources */ = {isa = PBXBuildFile; fileRef = 0C264E0524BDC12E0031F051 /* Graph.c */; };
 		0CAFC94624AB7DA500D7C5C0 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFC94524AB7DA500D7C5C0 /* main.c */; };
 		0CAFC95A24ACD60B00D7C5C0 /* define.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFC95924ACD60B00D7C5C0 /* define.c */; };
-		0CEEE49824B4C0B500F590C4 /* Tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 0CEEE49624B4C08300F590C4 /* Tree.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -234,9 +233,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CA27D9924C9D6A30016D2B6 /* Graph.c in Sources */,
 				0CAFC94624AB7DA500D7C5C0 /* main.c in Sources */,
-				0CEEE49824B4C0B500F590C4 /* Tree.c in Sources */,
-				0C264E0624BDC12E0031F051 /* Graph.c in Sources */,
 				0CAFC95A24ACD60B00D7C5C0 /* define.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
