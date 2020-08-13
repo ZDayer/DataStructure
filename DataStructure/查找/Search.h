@@ -59,5 +59,28 @@ Status SearchBST(BiTree T, int key, BiTree f, BiTree *p);
 // 插入
 Status InsertBST(BiTree *T, int key);
 
+// 删除
+// 存在关键字 key, 则删除该数据元素结点
+Status DeleteBST(BiTree *T, int key);
+
+
+// 平衡二叉树
+typedef struct BBiTNode {
+    int data;
+    int bf;  // 平衡因子
+    struct BBiTNode *lchild, *rchild;
+}BBiTNode, *BBiTree;
+
+// 右旋操作
+// 对以 p 为根的二叉排序树做右旋处理
+// 处理后 p 指向新的树根结点, 即旋转处理之前的左子树的根结点
+void R_Rotate(BBiTree *p);
+
+// 左旋操作
+// 对以 p 为根的二叉排序树做左旋处理
+// 处理后 p 指向新的树根结点, 即旋转处理之前的右子树的根结点
+void L_Rotate(BBiTree *p);
+
+
 #endif /* Search_h */
 

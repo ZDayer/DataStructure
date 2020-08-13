@@ -1,0 +1,85 @@
+//
+//  Sort.c
+//  DataStructure
+//
+//  Created by 大洋 on 2020/8/3.
+//  Copyright © 2020 Dayer. All rights reserved.
+//
+
+#include "Sort.h"
+
+void swap(SqList *L, int i, int j) {
+    int temp = L->r[i];
+    L->r[i] = L->r[j];
+    L->r[j] = temp;
+}
+
+
+// 冒泡排序
+// 初级
+void BubbleSort0(SqList *L) {
+    for (int i = 1; i < L->length; i++) {
+        for (int j = 1+1; j <= L->length; j++) {
+            if (L->r[i] > L->r[j]) {
+                swap(L, i, j);
+            }
+        }
+    }
+}
+
+// 从后向前比较, 小的数字逐渐向前移动到比它小的位置后面, 提高效率
+void BubbleSort(SqList *L) {
+    for (int i = 1; i < L->length; i++) {
+        for (int j = L->length-1; j >= i; j--) {
+            if (L->r[j] > L->r[j+1]) {
+                swap(L, j, j+1);
+            }
+        }
+    }
+}
+
+// 优化, 增加标记, 减少比较次数
+void BubbleSort2(SqList *L) {
+    Status flag = TRUE;
+    for (int i = 1; i < L->length && flag ; i++) {
+        flag = FALSE; // 初始
+        for (int j = L->length-1; j >= i; j--) {
+            if (L->r[j] > L->r[j+1]) {
+                swap(L, j, j+1);
+                flag = TRUE; // 有数据交换, 变为 TRUE
+            }
+        }
+    }
+}
+
+
+/// ===============
+// 简单选择排序
+void SelectSort(SqList *L) {
+    for (int i = 1; i < L->length; i++) {
+        int min = i;  // 将当前下标定义为最小值下标
+        for (int j = i+1; j < L->length; j++) {
+            if (L->r[min] > L->r[j]) {
+                min = j;
+            }
+        }
+        if (i != min) {
+            swap(L, i, min);
+        }
+    }
+}
+
+// 直接插入排序
+void InsertSort(SqList *L) {
+    for (int i = 2; i < L->length; i++) {
+        if (L->r[i] < L->r[i-1]) {
+            L->r[0] = L->r[i]; // 设置哨兵
+            int j;
+            for (j = i-1; L->r[j] > L->r[0]; j--) {
+                L->r[j+1] = L->r[j]; // 记录后移
+            }
+            L->r[j+1] = L->r[0]; // 插入正确位置
+            
+        }
+    }
+}

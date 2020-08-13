@@ -141,3 +141,77 @@ void initTree() {
         InsertBST(&T, a[i]);
     }
 }
+
+// 删除结点
+Status Delete(BiTree *p) {
+    BiTree q, s;
+    if ((*p)->rchild == NULL) { // 右子树为空, 只需重接左子树, 叶子结点也能处理
+        q = *p; // 记录当前
+        *p = (*p)->lchild;
+        free(q);
+    } else if ((*p)->lchild == NULL) { // 左子树为空, 只需重接右子树
+        q = *p;
+        *p = (*p)->rchild;
+        free(q);
+    } else { // 左右子树均不为空
+        q = *p;
+        s = (*p)->lchild;
+        while (s->rchild) { // 找到与删除结点接近的值, 根节点的值大于所有子结点, 左树小于右树, 找到子节点中最大的值, 找到删除结点的直接前驱
+            q = s;
+            s = s->rchild;
+        }
+        (*p)->data = s->data; // s 指向被删除结点的直接前驱
+        if (q != *p) {
+            q->rchild = s->lchild; // 重接 q 的右子树
+        } else {
+            q->lchild = s->lchild; // 重接 q 的左子树
+        }
+        free(s);
+        
+        
+//        q = *p;
+//        s = (*p)->rchild; // 后继结点
+//        while (s->lchild) {
+//            q = s;
+//            s = s->lchild;
+//        }
+//        (*p)->data = s->data; // 直接后继
+//        if (q != *p) {
+//            q->lchild = s->rchild;
+//        } else {
+//            q->rchild = s->rchild;
+//        }
+//        free(s);
+    }
+    return TRUE;
+}
+
+Status DeleteBST(BiTree *T, int key) {
+    if (!*T) {
+        return FALSE;
+    } else {
+        if (key == (*T)->data) { // 找到
+            return Delete(T);
+        } else if (key < (*T)->data) {
+            return DeleteBST(&(*T)->lchild, key);
+        } else {
+            return DeleteBST(&(*T)->rchild, key);
+        }
+    }
+}
+
+void R_Rotate(BBiTree *p) {
+    BBiTree L;
+    L = (*p)->lchild;
+    (*p)->lchild = L->rchild; // p->data 大于所有左子树结点的值, L 变成根结点, p是 L 的第一个右结点, 需要处理 L 的右子树
+    L->rchild = (*p);
+    *p = L;
+}
+
+void L_Rotate(BBiTree *p) {
+    BBiTree R;
+    R = (*p)->rchild;
+    (*p)->rchild = R->lchild; // p->data 小于所有右子树结点的值, R 变成根结点, p是 R 的第一个左结点, 需要处理 R 的左子树
+    R->lchild = (*p);
+    *p = R;  // p 指向新结点
+}
