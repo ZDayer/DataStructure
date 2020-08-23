@@ -83,3 +83,61 @@ void InsertSort(SqList *L) {
         }
     }
 }
+
+void ShellSort(SqList *L) {
+    int increment = L->length;
+    do {
+        increment = increment/3+1; //增量序列
+        for (int i = increment+1; i<= L->length; i++) {
+            if (L->r[i] < L->r[i-increment]) {
+                 // 需将 L->r[i] 插入有序增量子表
+                L->r[0] = L->r[i]; // 暂存在 L->r[0]
+                int j;
+                for (j = i-increment; j>0 && L->r[0] < L->r[j]; j-=increment) {
+                    L->r[j+increment] = L->r[j]; // 记录后移, 查找插入位置
+                }
+                L->r[j+increment] = L->r[0]; // 插入
+            }
+        }
+    } while (increment > 1);
+}
+
+
+
+
+// 堆排序
+// 已知 L->r[s..m] 中记录的关键字除 L->r[s] 之外均满足堆的定义
+// 本函数调整 L->r[s] 的关键字, 使L-r[s..m] 成为一个大顶堆
+void HeapAdjust(SqList *L, int s, int m) {
+    int temp = L->r[s];
+    for (int j = 2*s; j<=m; j*=2) {
+        if (j < m && L->r[j] < L->r[j+1]) { // 沿关键字较大的孩子结点向下筛选
+            ++j;  // j 为关键字中较大的记录的下标
+        }
+        if (temp >= L->r[j]) {
+            break;  //rc 应插入在位置 s上
+        }
+        L->r[s] = L->r[j];
+        s = j;
+    }
+    L->r[s] = temp; // 插入
+}
+
+
+
+
+void HeapSort(SqList *L) {
+    // 将 L->r[] 构建成一个大顶堆
+    for (int i = L->length/2; i > 0; i--) {
+        HeapAdjust(L, i, L->length);
+    }
+    
+    
+    for (int i = L->length; i>1 ; i--) {
+        // 将堆顶记录和当前未经排序子序列的最后一个记录交换
+        swap(L, 1, i);
+        // 将 L->r[1..i-1] 重新调整为大顶堆
+        HeapAdjust(L, 1, i-1);
+    }
+    
+}

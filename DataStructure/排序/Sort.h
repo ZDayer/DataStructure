@@ -10,6 +10,7 @@
 #define Sort_h
 
 #include <stdio.h>
+#include <math.h>
 #include "define.h"
 
 // 排序用的顺序结构
