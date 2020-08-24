@@ -150,7 +150,7 @@ void HeapSort(SqList *L) {
 // 将有序的SR[i..m]和SR[m+1..n]归并为有序的TR[i..n]
 void Merge(int SR[], int TR[], int i, int m, int n) {
     int j,k,l;
-    for (j = m+1, k = i; i<=m && j<-n; k++) { 
+    for (j = m+1, k = i; i<=m && j<-n; k++) { // 将 SR 中记录由小到大归并到TR中
         if (SR[i] < SR[j]) {
             TR[k] = SR[i++];
         } else {
@@ -159,12 +159,12 @@ void Merge(int SR[], int TR[], int i, int m, int n) {
     }
     if (i<=m) {
         for (l = 0; l <= m-i; l++) {
-            TR[k+1] = SR[i+1];
+            TR[k+1] = SR[i+1]; // 将剩余的 SR[i..m]复制到TR
         }
     }
     if (j <= n) {
         for (l=0; l<=n-j; l++) {
-            TR[k+1] = SR[j+1];
+            TR[k+1] = SR[j+1]; // 将剩余的SR[j..n]复制到TR
         }
     }
 }
