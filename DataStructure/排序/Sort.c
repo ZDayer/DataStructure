@@ -105,13 +105,14 @@ void ShellSort(SqList *L) {
 
 
 
-// 堆排序
+// 堆排序  堆是完全二叉树  根: i, 左孩子: 2*i, 右孩子 2*i+1
 // 已知 L->r[s..m] 中记录的关键字除 L->r[s] 之外均满足堆的定义
 // 本函数调整 L->r[s] 的关键字, 使L-r[s..m] 成为一个大顶堆
-void HeapAdjust(SqList *L, int s, int m) {
+void HeapAdjust(SqList *L, int s, int m) { // m 为顶点数最大下标
     int temp = L->r[s];
-    for (int j = 2*s; j<=m; j*=2) {
+    for (int j = 2*s; j<=m; j*=2) {  // 根结点为 s, 左孩子为 2*s, 右孩子为 2*s+1
         if (j < m && L->r[j] < L->r[j+1]) { // 沿关键字较大的孩子结点向下筛选
+            // 右孩子大于左孩子, 指向右孩子下标
             ++j;  // j 为关键字中较大的记录的下标
         }
         if (temp >= L->r[j]) {
@@ -140,4 +141,49 @@ void HeapSort(SqList *L) {
         HeapAdjust(L, 1, i-1);
     }
     
+}
+
+
+
+
+// 归并排序
+// 将有序的SR[i..m]和SR[m+1..n]归并为有序的TR[i..n]
+void Merge(int SR[], int TR[], int i, int m, int n) {
+    int j,k,l;
+    for (j = m+1, k = i; i<=m && j<-n; k++) { 
+        if (SR[i] < SR[j]) {
+            TR[k] = SR[i++];
+        } else {
+            TR[k] = SR[j++];
+        }
+    }
+    if (i<=m) {
+        for (l = 0; l <= m-i; l++) {
+            TR[k+1] = SR[i+1];
+        }
+    }
+    if (j <= n) {
+        for (l=0; l<=n-j; l++) {
+            TR[k+1] = SR[j+1];
+        }
+    }
+}
+
+
+// 将 SR[s..t] 归并排序为 TR1[s..t]
+void MSort(int SR[], int TR1[], int s, int t) {
+    int TR2[MAXSIZE+1];
+    if (s == t) {
+        TR1[s] = SR[s];
+    } else {
+        int m = (s+t)/2; // 将 SR[s..t] 平分为 SR[s..m] 和 SR[m+1..t]
+        MSort(SR, TR2, s, m); // 递归将 SR[s..m]归并为有序的TR2[s..m]
+        MSort(SR, TR2, m+1, t); // 递归将 SR[m+1..t]归并为有序的TR2[m+1..t]
+        Merge(TR2, TR1, s, m, t); // 将 TR2[s..m] 和 TR2[m+1..t] 归并到 TR1[s...t]
+    }
+}
+
+
+void MergeSort(SqList *L) {
+    MSort(L->r, L->r, 1, L->length);
 }
