@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 #include "define.h"
 
 // 排序用的顺序结构

@@ -147,10 +147,12 @@ void HeapSort(SqList *L) {
 
 
 // 归并排序
+
+// 递归方式, 占用内存, 效率高, 稳定的算法
 // 将有序的SR[i..m]和SR[m+1..n]归并为有序的TR[i..n]
 void Merge(int SR[], int TR[], int i, int m, int n) {
     int j,k,l;
-    for (j = m+1, k = i; i<=m && j<-n; k++) { // 将 SR 中记录由小到大归并到TR中
+    for (j = m+1, k = i; i<=m && j<=n; k++) { // 将 SR 中记录由小到大归并到TR中
         if (SR[i] < SR[j]) {
             TR[k] = SR[i++];
         } else {
@@ -172,7 +174,7 @@ void Merge(int SR[], int TR[], int i, int m, int n) {
 
 // 将 SR[s..t] 归并排序为 TR1[s..t]
 void MSort(int SR[], int TR1[], int s, int t) {
-    int TR2[MAXSIZE+1];
+    int TR2[MAXSIZE+1];  // int r[MAXSIZE+1]
     if (s == t) {
         TR1[s] = SR[s];
     } else {
@@ -186,4 +188,36 @@ void MSort(int SR[], int TR1[], int s, int t) {
 
 void MergeSort(SqList *L) {
     MSort(L->r, L->r, 1, L->length);
+}
+
+
+// 归并, 迭代方式
+
+// 将 SR[] 中相邻长度为 s 的子序列两两归并到 TR[]
+void MergePass(int SR[], int TR[], int s, int n) {
+    int i = 1;
+    int j;
+    while (i <= n-2*s+1) {
+        Merge(SR, TR, i, i+s-1, i+2*s-1); // 两两归并  //  1, 1, 2
+        i= i+2*s; // 3                                // 3, 3, 4
+    }
+    if (i < n-s+1) { // 归并最后两个序列
+        Merge(SR, TR, i, i+s-1, n);
+    } else {
+        // 最后只剩下单个子序列
+        for (j = i; j <= n; j++) {
+            TR[j] = SR[j];
+        }
+    }
+}
+
+void MergeSort2(SqList *L) {
+    int *TR = (int *)malloc(L->length*sizeof(int)); // 申请空间
+    int k = 1;
+    while (k < L->length) {  //  1->2->4->8->16   归并每组个数
+        MergePass(L->r, TR, k, L->length);// L->r TR 1 9
+        k = 2*k;  // 子序列长度加倍
+        MergePass(TR, L->r, k, L->length); // TR L->r 2 9
+        k = 2*k;  // 子序列长度加倍
+    }
 }
