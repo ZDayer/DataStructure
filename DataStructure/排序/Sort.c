@@ -7,6 +7,16 @@
 //
 
 #include "Sort.h"
+// 直接插入排序
+// 希尔排序是直接插入排序的升级
+
+// 选择排序
+// 简单选择排序
+// 堆排序
+
+// 交换排序
+// 冒泡排序
+// 快速排序
 
 void swap(SqList *L, int i, int j) {
     int temp = L->r[i];
@@ -220,4 +230,36 @@ void MergeSort2(SqList *L) {
         MergePass(TR, L->r, k, L->length); // TR L->r 2 9
         k = 2*k;  // 子序列长度加倍
     }
+}
+
+
+
+// 快速排序
+
+int Partition(SqList *L, int low, int high) {
+    int pivotkey = L->r[low]; // 使用子表第一个记录做 枢轴记录
+    while (low < high) {
+        while (low < high && L->r[high] >= pivotkey) {
+            high--;
+        }
+        swap(L, low, high); // 将比枢轴记录小的记录交换到低端
+        while (low < high && L->r[low] <= pivotkey) {
+            low++;
+        }
+        swap(L, low, high); // 将比枢轴大的记录交换到高端
+    }
+    return low;
+}
+
+
+void QSort(SqList *L, int low, int high) {
+    if (low < high) {
+        int pivot = Partition(L, low, high); // 将 L->r[low..high] 一分为二, 算出枢轴值pivot
+        QSort(L, low, pivot);
+        QSort(L, pivot+1, high);
+    }
+}
+
+void QuickSort(SqList *L) {
+    QSort(L, 1, L->length);
 }
