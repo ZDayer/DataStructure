@@ -239,7 +239,7 @@ void MergeSort2(SqList *L) {
 int Partition(SqList *L, int low, int high) {
     int pivotkey = L->r[low]; // 使用子表第一个记录做 枢轴记录
     while (low < high) {
-        while (low < high && L->r[high] >= pivotkey) {
+        while (low < high && L->r[high] >= pivotkey) { // 从表的两端交替向中间扫描
             high--;
         }
         swap(L, low, high); // 将比枢轴记录小的记录交换到低端
@@ -248,17 +248,46 @@ int Partition(SqList *L, int low, int high) {
         }
         swap(L, low, high); // 将比枢轴大的记录交换到高端
     }
-    return low;
+    return low; // 返回 枢轴
 }
 
 
+//void QSort(SqList *L, int low, int high) {
+//    if (low < high) {
+//        int pivot = Partition(L, low, high); // 将 L->r[low..high] 一分为二, 算出枢轴值pivot
+//        QSort(L, low, pivot);
+//        QSort(L, pivot+1, high);
+//    }
+//}
+
+// 优化, 在数据量较小的时候, 快排效率不如直接插入排序
+#define MAX_LENGTH_INSERT_SORT 7 // 阀值
+//void QSort(SqList *L, int low, int high) {
+//    if ((high - low) > MAX_LENGTH_INSERT_SORT) {
+//        if (low < high) {
+//            int pivot = Partition(L, low, high); // 将 L->r[low..high] 一分为二, 算出枢轴值pivot
+//            QSort(L, low, pivot);
+//            QSort(L, pivot+1, high);
+//        }
+//    } else {
+//        InsertSort(L);
+//    }
+//}
+
+// 数据量大的时候, 采用递归可能会造成溢出, 也会降低效率,
+// 使用尾递归优化
 void QSort(SqList *L, int low, int high) {
-    if (low < high) {
-        int pivot = Partition(L, low, high); // 将 L->r[low..high] 一分为二, 算出枢轴值pivot
-        QSort(L, low, pivot);
-        QSort(L, pivot+1, high);
+    if ((high - low) > MAX_LENGTH_INSERT_SORT) {
+        while (low < high) {
+            int pivot = Partition(L, low, high); // 将 L->r[low..high] 一分为二, 算出枢轴值pivot
+            QSort(L, low, pivot-1); // 对低字表递归排序
+            low = pivot+1; // 尾递归
+        }
+    } else {
+        InsertSort(L);
     }
 }
+
 
 void QuickSort(SqList *L) {
     QSort(L, 1, L->length);
